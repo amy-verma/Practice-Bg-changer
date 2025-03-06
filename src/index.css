@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.res-logo{
+    padding: 5px;
+    width: 100%
+}
+    
+.res-card{
+    border-radius: 5px;
+    height: auto;
+    width: 200px;
+    background-color: rgb(247, 240, 240);
+
+   }
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+.rest-cards{
+    display: flex;
+    flex-wrap: wrap;
+    
+}

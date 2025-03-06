@@ -1,6 +1,56 @@
+import resList from "./mockData";
+import RestaurantCard from "./RestaurantsCard";
 
+const BgChanger = () => {
+    return (
+        <div className="rest-cards">
+        {
+            resList.map((restaurant)=> <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+            )
+        }
+        
+        </div>
+    );
+};
+export default BgChanger;
+// import { useCallback } from "react"
+// import { useState } from "react"
 
+// const BgChanger=()=>{
+//     const [length,setLength]=useState(8)
+//     const [charAllowed,setCharAllowed]=useState(null)
+//     const [numberAllowed,setNumberAllowed]=useState(null)
+//     const [password,SetPassword]=useState(null)
 
+//     const passGenerater=useCallback(()=>{
+//          let pass="";
+//         let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+//         if (numberAllowed) str+="1234567890";
+
+//         if (charAllowed) str+="!@#$%^&*()";
+//         for(let i=0;i<length;i++){
+//             let char=Math.floor(Math.random()*str.length+1)
+//             pass +=str.charAt(char)
+//         }
+//         SetPassword(pass)
+
+//     }
+//         ,[length,charAllowed,numberAllowed,SetPassword])
+
+//     return(
+//         <div>
+
+//         </div>
+//     )
+// }
+// export default BgChanger
+
+//  const BgChanger=()=>{
+//     return(
+
+//     )
+//  }
+//  export default BgChanger;
 // import { useCallback, useEffect, useRef } from "react";
 // import { useState } from "react";
 
@@ -9,7 +59,6 @@
 //     const [numberAllowed, setNumberAllowed] = useState(false);
 //     const [charAllowed, setCharAllowed] = useState(false);
 //     const [password, SetPassword] = useState("");
-
 
 //     const passwordRef=useRef(null)
 
@@ -108,8 +157,6 @@
 //     const [btnName,setBtnName]=useState("Login")
 //     console.log("Header Render")
 
-
-
 //     useEffect(()=>{
 //         console.log(`useEffect Called: Background changed to ${color}`)
 //     },[color])
@@ -118,6 +165,7 @@
 //         <div className={`w-full relative h-screen  ${color}`}>
 //             <div className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-2xl">
 //                 Count :{count}
+//                 {1+25}
 //             </div>
 //             <div className="flex items-center justify-center absolute bottom-20 -translate-x-1/2 left-1/2">
 //                 <button className="px-2 py-4 border text-white bg-black" onClick={()=>{
@@ -139,7 +187,7 @@
 //                     setCount(count+1)
 //                     setCount(count+1)
 //                     setCount(count+1)
-                    
+
 //                     console.log("usestate called")
 //                 }}>
 //                     Count
@@ -147,7 +195,7 @@
 //                 <button className="px-2 py-4 border text-white bg-black" onClick={()=>{
 //                    setBtnName(btnName === "Login" ? "Logout" : ("Login"))
 //                 }}>{btnName}</button>
-              
+
 //             </div>
 //         </div>
 //     )
