@@ -2,34 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.res-logo{
+.res-logo {
     padding: 5px;
-    width: 100%
+    width: 100%;
 }
-    
-.res-card{
+
+.res-card {
     border-radius: 5px;
     height: auto;
     width: 280px;
     background-color: rgb(247, 240, 240);
-
-   }
-.res-card:hover{
+}
+.res-card:hover {
     border: 1px solid black;
     cursor: pointer;
-
 }
-.rest-cards{
+.rest-cards {
     display: flex;
     flex-wrap: wrap;
-    
 }
-.filter-btn{
+.filter-btn {
     margin: 5px;
     padding: 2px;
     border: 1px solid black;
 }
-.filter-btn:hover{
+.filter-btn:hover {
     background-color: rgb(134, 132, 129);
+}
+.shimmer-cards {
+    margin: 20px;
+    height: 400px;
+    width: 200px;
+    background-color: gray;
+    border: 1px solid black;
+}
+.shimmer-Container {
+    display: flex;
+    flex-wrap: wrap;
 }
