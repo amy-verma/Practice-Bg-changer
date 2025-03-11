@@ -6,6 +6,8 @@ import Shimmer from "./Shimmer";
 const BgChanger = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState(resList);
 
+    const [btnName,setBtnName]=useState("Login")
+
     let handlefilterbtn = () => {
         let filteredRestaurant = listOfRestaurant.filter(
             (res) => res?.info?.avgRating > 4
@@ -15,12 +17,20 @@ const BgChanger = () => {
     };
 
     //Conditional Redering-Rendering on the basics of condition
-    if(listOfRestaurant.length === 0 ){
-        return <Shimmer/>
+    if (listOfRestaurant.length === 0) {
+        return <Shimmer />;
+    }
+    const handleFilter=()=>{
+      btnName === "Login" ?   setBtnName("Logout") : setBtnName("Login")
+       console.log(btnName)
     }
 
     return (
         <div>
+            <div className="login-btn">
+                <button className="login" onClick={handleFilter}>{btnName}</button>
+            </div>
+
             <div className="filter">
                 <button className="filter-btn" onClick={handlefilterbtn}>
                     Top RATED Restautrant
