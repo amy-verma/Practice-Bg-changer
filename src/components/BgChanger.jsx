@@ -1,14 +1,30 @@
+import { useState } from "react";
 import resList from "./mockData";
 import RestaurantCard from "./RestaurantsCard";
 
 const BgChanger = () => {
+     
+    const [listOfRestaurant,setListOfRestaurant]=useState(resList)
+
+    let handlefilterbtn=()=>{
+       let filteredRestaurant=listOfRestaurant.filter((res)=>
+       res?.info?.avgRating > 4
+     )  
+     console.log(filteredRestaurant)
+     setListOfRestaurant(filteredRestaurant)
+    }
     return (
+        <div>
+            <div className="filter">
+                <button className="filter-btn" onClick={handlefilterbtn}>Top RATED Restautrant</button>
+            </div>
         <div className="rest-cards">
         {
-            resList.map((restaurant)=> <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+            listOfRestaurant.map((restaurant)=> <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
             )
         }
         
+        </div>
         </div>
     );
 };

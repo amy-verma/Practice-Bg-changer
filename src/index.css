@@ -11,7 +11,7 @@
 .res-card{
     border-radius: 5px;
     height: auto;
-    width: 200px;
+    width: 280px;
     background-color: rgb(247, 240, 240);
 
    }
@@ -24,4 +24,12 @@
     display: flex;
     flex-wrap: wrap;
     
+}
+.filter-btn{
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
+}
+.filter-btn:hover{
+    background-color: rgb(134, 132, 129);
 }
