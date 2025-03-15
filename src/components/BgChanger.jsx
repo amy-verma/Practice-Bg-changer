@@ -8,12 +8,17 @@ const BgChanger = () => {
 
     const [btnName,setBtnName]=useState("Login")
 
+    const [filteredRestaurant,setFilteredRestaurant]=useState(resList)
+        //whenever state variable updates, react triggers a reconciliation cycle(re-render the component)
+    const [searchText,setSearchText]=useState("");
+
     let handlefilterbtn = () => {
         let filteredRestaurant = listOfRestaurant.filter(
             (res) => res?.info?.avgRating > 4
         );
         console.log(filteredRestaurant);
         setListOfRestaurant(filteredRestaurant);
+        setFilteredRestaurant(filteredRestaurant)
     };
 
     //Conditional Redering-Rendering on the basics of condition
@@ -25,19 +30,34 @@ const BgChanger = () => {
        console.log(btnName)
     }
 
+    const handleonchange=(e)=>{
+       setSearchText(e.target.value)
+       
+    }
+
     return (
         <div>
+            <div className="header-container">
             <div className="login-btn">
                 <button className="login" onClick={handleFilter}>{btnName}</button>
             </div>
-
+            <div className="search">
+                <input type="text" className="search-box" placeholder="search your restaurant" value={searchText} onChange={handleonchange}></input>
+                <button className="search-btn" onClick={()=>{
+                    let filteredRestaurant=resList.filter((res)=>
+                        res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+                    )
+                    setFilteredRestaurant(filteredRestaurant)
+                }}>Search</button>
+            </div>
             <div className="filter">
                 <button className="filter-btn" onClick={handlefilterbtn}>
                     Top RATED Restautrant
                 </button>
             </div>
+            </div>
             <div className="rest-cards">
-                {listOfRestaurant.map((restaurant) => (
+                {filteredRestaurant.map((restaurant) => (
                     <RestaurantCard
                         key={restaurant.info.id}
                         resData={restaurant}

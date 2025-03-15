@@ -54,3 +54,19 @@
     display: flex;
     float: right;
 }
+.search-box{
+    padding: 0 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    
+    margin: 10px;
+}
+.header-container{
+    display: flex;
+
+}
+.search-btn{
+    margin: 5px 100px 0 0;
+    padding: 0 20px;
+    border: 1px solid black;
+}
