@@ -257,3 +257,37 @@ export default BgChanger;
 // }
 
 // export default BgChanger;
+
+// import React from 'react';
+// import {useState} from "react";
+
+// function App(props) {
+
+// let [count,setCount]=useState(0)
+// let [isDecreasing,setIsDecreasimg]=useState(false)
+//     const handleOnclick=()=>{
+//             setCount((prev)=>{
+//                 if(prev===10){
+//                     setIsDecreasimg(true)
+//                     return prev-1;
+//                 }else if (isDecreasing){
+//                   return  prev-1
+//                 }else{
+//                     return prev+1
+//                 }
+//             })
+//     }
+
+
+//   return (
+//     <div className='any'>
+//       <div>
+//       <button onClick={handleOnclick}>Increment:{count}</button>
+
+
+//       </div>
+//     </div>
+//   );
+// }
+
+//   export default App
